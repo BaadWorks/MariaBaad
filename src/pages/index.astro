@@ -1,0 +1,692 @@
+---
+const supportAreas = [
+	"Konflikter, grænser og hverdagssituationer",
+	"Barnets følelser, adfærd og signaler",
+	"Samarbejde mellem forældre, institution og skole",
+	"Tryghed i det nye eller kommende forældreskab",
+	"Kulturelle forskelle og familieliv i Danmark",
+	"Konkrete redskaber, der kan bruges med det samme",
+];
+
+const processSteps = [
+	{
+		title: "Vi starter med jeres situation",
+		text: "Maria lytter til det, der fylder, og hjælper med at få øje på mønstre, behov og handlemuligheder.",
+	},
+	{
+		title: "I får faglig sparring og konkrete redskaber",
+		text: "Samtalerne tager udgangspunkt i relationer, tilknytning, mentalisering og barnets følelsesmæssige behov.",
+	},
+	{
+		title: "Små justeringer bliver til ny retning",
+		text: "Målet er mere ro, større forståelse og et familieliv, hvor både børn og voksne føler sig bedre hjulpet.",
+	},
+];
+---
+
+<html lang="da">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta
+			name="description"
+			content="Familievejledning på Østerbro og online med Maria Baad. Faglig, kærlig og konkret støtte til familier og institutioner."
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<title>Maria Baad | Familievejledning</title>
+	</head>
+	<body>
+		<header class="site-header">
+			<a class="brand" href="/" aria-label="Maria Baad forside">
+				<span class="brand-mark">MB</span>
+				<span>
+					<strong>Maria Baad</strong>
+					<small>Familievejledning</small>
+				</span>
+			</a>
+			<nav class="main-nav" aria-label="Primær navigation">
+				<a href="#familier">Familier</a>
+				<a href="#institutioner">Institutioner</a>
+				<a href="#om">Om Maria</a>
+				<a href="#kontakt">Kontakt</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="hero" aria-labelledby="hero-title">
+				<div class="hero-copy">
+					<p class="eyebrow">Familievejledning på Østerbro og online</p>
+					<h1 id="hero-title">Tryg støtte til familier, der ønsker mere ro, retning og forståelse</h1>
+					<p class="hero-lede">
+						Maria Baad tilbyder familiestøtte og vejledning med et kærligt, fordomsfrit
+						og fagligt stærkt udgangspunkt. Sammen finder I konkrete veje videre i
+						hverdagen.
+					</p>
+					<div class="hero-actions" aria-label="Vigtige handlinger">
+						<a class="button primary" href="#kontakt">Kontakt Maria</a>
+						<a class="button secondary" href="#saadan">Se hvordan det foregår</a>
+					</div>
+				</div>
+				<div class="hero-media" aria-label="Plads til portrætfoto af Maria">
+					<div class="image-placeholder">
+						<span>Portrætfoto</span>
+						<small>Tilføjes senere</small>
+					</div>
+				</div>
+			</section>
+
+			<section class="audiences" aria-label="Målgrupper">
+				<a class="audience-card" id="familier" href="#hjaelp">
+					<span>For familier</span>
+					<strong>Hjælp til konflikter, trivsel, samarbejde og svære følelser.</strong>
+				</a>
+				<a class="audience-card institution" id="institutioner" href="#institutioner-indhold">
+					<span>For institutioner</span>
+					<strong>Praksisnære forløb om Tryghedscirklen, mentalisering og børns behov.</strong>
+				</a>
+			</section>
+
+			<section class="section split" id="hjaelp" aria-labelledby="help-title">
+				<div>
+					<p class="eyebrow">Hvordan Maria kan hjælpe</p>
+					<h2 id="help-title">Når familielivet kalder på nye handlemuligheder</h2>
+					<p>
+						Forældreskab kan føles både kærligt, overvældende og svært at navigere i.
+						Maria hjælper jer med at forstå, hvad der kan ligge bag barnets reaktioner,
+						og hvordan I som voksne kan møde barnet med mere tryghed.
+					</p>
+				</div>
+				<ul class="support-list">
+					{supportAreas.map((area) => <li>{area}</li>)}
+				</ul>
+			</section>
+
+			<section class="section process" id="saadan" aria-labelledby="process-title">
+				<p class="eyebrow">Sådan foregår et forløb</p>
+				<h2 id="process-title">Et trygt rum med plads til både sårbarhed og konkrete løsninger</h2>
+				<div class="process-grid">
+					{processSteps.map((step, index) => (
+						<article class="step">
+							<span>{String(index + 1).padStart(2, "0")}</span>
+							<h3>{step.title}</h3>
+							<p>{step.text}</p>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section class="section about" id="om" aria-labelledby="about-title">
+				<div class="about-media" aria-label="Plads til billede fra kontor eller samtalerum">
+					<div class="image-placeholder landscape">
+						<span>Stemningsbillede</span>
+						<small>Kontor, samtalerum eller roligt miljø</small>
+					</div>
+				</div>
+				<div class="about-copy">
+					<p class="eyebrow">Hvem er Maria?</p>
+					<h2 id="about-title">Erfaren pædagog og familievejleder med blik for hele familien</h2>
+					<p>
+						Maria Baad Andersen har over 25 års erfaring med børn, familier og relationer.
+						Hun arbejder tæt sammen med familier, der ønsker at skabe mere forståelse,
+						glæde og håb i hverdagen.
+					</p>
+					<p>
+						Hendes faglige fundament bygger blandt andet på tilknytning, mentalisering,
+						Tryghedscirklen og praksisnære redskaber, der kan bruges i familieliv,
+						daginstitutioner og skoler.
+					</p>
+				</div>
+			</section>
+
+			<section class="quote-band" aria-labelledby="quote-title">
+				<div>
+					<p class="eyebrow">Anbefaling</p>
+					<h2 id="quote-title">Familier fremhæver Marias varme, faglighed og konkrete hjælp</h2>
+				</div>
+				<blockquote>
+					"Maria forstod at italesætte de udfordringer vi oplevede fra barnets perspektiv
+					med stor faglighed og en sødme der oser af kærlighed til børn og unge."
+					<cite>Susanne, mor til piger på 1 og 4 år</cite>
+				</blockquote>
+			</section>
+
+			<section class="section institution-section" id="institutioner-indhold" aria-labelledby="institution-title">
+				<div>
+					<p class="eyebrow">Til daginstitutioner og kommuner</p>
+					<h2 id="institution-title">Tryghed i praksis for personalegrupper</h2>
+					<p>
+						Maria tilbyder kompetenceudvikling og praksisnære forløb med afsæt i
+						Tryghedscirklen og Se Barnet Indefra. Formålet er at skabe et fælles sprog
+						og styrke personalets blik for barnets behov bag adfærd.
+					</p>
+				</div>
+				<div class="feature-panel">
+					<h3>Forløb kan indeholde</h3>
+					<ul>
+						<li>Introduktion til centrale begreber</li>
+						<li>Refleksionsøvelser fra egen praksis</li>
+						<li>Fokus på den voksnes rolle som tryg base</li>
+						<li>Anbefalinger til det videre arbejde</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="contact-section" id="kontakt" aria-labelledby="contact-title">
+				<div>
+					<p class="eyebrow">Kontakt</p>
+					<h2 id="contact-title">Vil du høre, om Maria kan hjælpe jer?</h2>
+					<p>
+						Du er velkommen til at ringe, sende en SMS eller skrive en e-mail. Maria
+						tilbyder samtaler hjemme, online eller på kontor på Østerbro.
+					</p>
+				</div>
+				<div class="contact-actions">
+					<a class="button primary" href="tel:+4593901154">Ring til Maria</a>
+					<a class="button secondary" href="mailto:kontaktmariabaad@gmail.com">Skriv e-mail</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<p>Maria Baad</p>
+			<p>Telefon: <a href="tel:+4593901154">+45 93901154</a></p>
+			<p>CVR: 45155099</p>
+		</footer>
+	</body>
+</html>
+
+<style>
+	:root {
+		color-scheme: light;
+		--paper: #fbf7f0;
+		--ink: #22302b;
+		--muted: #66736d;
+		--sage: #dce7dc;
+		--sage-dark: #35534a;
+		--clay: #bc735d;
+		--butter: #f1d58f;
+		--white: #fffdf8;
+		--line: rgba(34, 48, 43, 0.14);
+		--shadow: 0 22px 55px rgba(34, 48, 43, 0.1);
+		font-family:
+			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		background: var(--paper);
+		color: var(--ink);
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 20;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		padding: 18px clamp(20px, 5vw, 72px);
+		background: rgba(251, 247, 240, 0.92);
+		border-bottom: 1px solid var(--line);
+		backdrop-filter: blur(18px);
+	}
+
+	.brand {
+		display: inline-flex;
+		align-items: center;
+		gap: 12px;
+		text-decoration: none;
+	}
+
+	.brand-mark {
+		display: grid;
+		width: 44px;
+		height: 44px;
+		place-items: center;
+		border-radius: 50%;
+		background: var(--sage-dark);
+		color: var(--white);
+		font-weight: 700;
+	}
+
+	.brand strong,
+	.brand small {
+		display: block;
+	}
+
+	.brand small,
+	.eyebrow {
+		color: var(--muted);
+		font-size: 0.84rem;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	.main-nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 8px 22px;
+		font-size: 0.95rem;
+	}
+
+	.main-nav a {
+		text-decoration: none;
+	}
+
+	.main-nav a:hover {
+		color: var(--clay);
+	}
+
+	main {
+		overflow: hidden;
+	}
+
+	.hero,
+	.section,
+	.quote-band,
+	.contact-section,
+	.site-footer {
+		padding-inline: clamp(20px, 5vw, 72px);
+	}
+
+	.hero {
+		display: grid;
+		grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.78fr);
+		gap: clamp(36px, 7vw, 92px);
+		align-items: center;
+		min-height: calc(100svh - 82px);
+		padding-block: clamp(58px, 8vw, 96px) clamp(44px, 6vw, 80px);
+		background:
+			linear-gradient(115deg, rgba(220, 231, 220, 0.72), transparent 52%),
+			var(--paper);
+	}
+
+	.eyebrow {
+		margin: 0 0 14px;
+		letter-spacing: 0;
+	}
+
+	h1,
+	h2,
+	h3,
+	p {
+		margin-top: 0;
+	}
+
+	h1,
+	h2,
+	h3 {
+		line-height: 1.08;
+		letter-spacing: 0;
+	}
+
+	h1 {
+		max-width: 880px;
+		margin-bottom: 22px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(3rem, 8vw, 6.8rem);
+		font-weight: 500;
+	}
+
+	h2 {
+		max-width: 780px;
+		margin-bottom: 20px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(2.15rem, 4.6vw, 4.6rem);
+		font-weight: 500;
+	}
+
+	h3 {
+		margin-bottom: 10px;
+		font-size: 1.2rem;
+	}
+
+	.hero-lede,
+	.section p,
+	.contact-section p {
+		max-width: 680px;
+		color: var(--muted);
+		font-size: 1.08rem;
+	}
+
+	.hero-actions,
+	.contact-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-top: 30px;
+	}
+
+	.button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 48px;
+		padding: 13px 20px;
+		border: 1px solid transparent;
+		border-radius: 7px;
+		font-weight: 800;
+		text-decoration: none;
+	}
+
+	.button.primary {
+		background: var(--sage-dark);
+		color: var(--white);
+	}
+
+	.button.secondary {
+		background: var(--white);
+		border-color: var(--line);
+		color: var(--sage-dark);
+	}
+
+	.hero-media,
+	.about-media {
+		min-width: 0;
+	}
+
+	.image-placeholder {
+		display: grid;
+		min-height: 560px;
+		place-items: center;
+		align-content: center;
+		gap: 8px;
+		aspect-ratio: 4 / 5;
+		background:
+			linear-gradient(135deg, rgba(255, 253, 248, 0.64), rgba(241, 213, 143, 0.28)),
+			var(--sage);
+		border: 1px solid var(--line);
+		border-radius: 8px;
+		box-shadow: var(--shadow);
+		color: var(--sage-dark);
+		text-align: center;
+	}
+
+	.image-placeholder span {
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 2rem;
+	}
+
+	.image-placeholder small {
+		color: var(--muted);
+		font-weight: 700;
+	}
+
+	.image-placeholder.landscape {
+		min-height: 360px;
+		aspect-ratio: 5 / 4;
+		box-shadow: none;
+	}
+
+	.audiences {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		border-block: 1px solid var(--line);
+	}
+
+	.audience-card {
+		display: grid;
+		gap: 12px;
+		min-height: 210px;
+		padding: clamp(24px, 4vw, 52px);
+		background: var(--white);
+		text-decoration: none;
+	}
+
+	.audience-card + .audience-card {
+		border-left: 1px solid var(--line);
+	}
+
+	.audience-card span {
+		color: var(--clay);
+		font-weight: 800;
+	}
+
+	.audience-card strong {
+		max-width: 620px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(1.55rem, 3vw, 2.55rem);
+		font-weight: 500;
+		line-height: 1.15;
+	}
+
+	.audience-card.institution {
+		background: var(--sage);
+	}
+
+	.section {
+		padding-block: clamp(70px, 10vw, 132px);
+	}
+
+	.split,
+	.about,
+	.institution-section,
+	.contact-section {
+		display: grid;
+		grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+		gap: clamp(32px, 6vw, 76px);
+		align-items: start;
+	}
+
+	.support-list,
+	.feature-panel ul {
+		display: grid;
+		gap: 12px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.support-list li,
+	.feature-panel li {
+		padding: 16px 18px;
+		background: var(--white);
+		border: 1px solid var(--line);
+		border-radius: 8px;
+	}
+
+	.process {
+		background: var(--white);
+	}
+
+	.process-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 18px;
+		margin-top: 34px;
+	}
+
+	.step {
+		min-height: 300px;
+		padding: 28px;
+		background: var(--paper);
+		border: 1px solid var(--line);
+		border-radius: 8px;
+	}
+
+	.step span {
+		display: inline-block;
+		margin-bottom: 48px;
+		color: var(--clay);
+		font-weight: 900;
+	}
+
+	.step p {
+		color: var(--muted);
+	}
+
+	.about {
+		align-items: center;
+	}
+
+	.quote-band {
+		display: grid;
+		grid-template-columns: minmax(0, 0.72fr) minmax(320px, 1fr);
+		gap: clamp(28px, 6vw, 72px);
+		padding-block: clamp(60px, 9vw, 112px);
+		background: var(--sage-dark);
+		color: var(--white);
+	}
+
+	.quote-band .eyebrow {
+		color: var(--butter);
+	}
+
+	.quote-band h2 {
+		font-size: clamp(2rem, 4vw, 3.6rem);
+	}
+
+	blockquote {
+		margin: 0;
+		color: var(--white);
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(1.45rem, 3vw, 2.6rem);
+		line-height: 1.24;
+	}
+
+	cite {
+		display: block;
+		margin-top: 24px;
+		color: rgba(255, 253, 248, 0.78);
+		font-family:
+			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 800;
+	}
+
+	.institution-section {
+		background: var(--paper);
+	}
+
+	.feature-panel {
+		padding: clamp(24px, 4vw, 40px);
+		background: var(--white);
+		border: 1px solid var(--line);
+		border-radius: 8px;
+		box-shadow: var(--shadow);
+	}
+
+	.contact-section {
+		align-items: center;
+		padding-block: clamp(56px, 8vw, 88px);
+		background: var(--butter);
+	}
+
+	.contact-section .button.secondary {
+		background: transparent;
+		border-color: rgba(34, 48, 43, 0.28);
+	}
+
+	.site-footer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 12px 24px;
+		padding-block: 28px;
+		background: var(--ink);
+		color: var(--white);
+	}
+
+	.site-footer p {
+		margin: 0;
+	}
+
+	.site-footer a {
+		text-decoration-color: rgba(255, 253, 248, 0.5);
+	}
+
+	@media (max-width: 900px) {
+		.site-header {
+			position: static;
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		.main-nav {
+			justify-content: flex-start;
+		}
+
+		.hero,
+		.split,
+		.about,
+		.institution-section,
+		.quote-band,
+		.contact-section {
+			grid-template-columns: 1fr;
+		}
+
+		.hero {
+			min-height: auto;
+		}
+
+		.image-placeholder {
+			min-height: 360px;
+			aspect-ratio: 16 / 11;
+		}
+
+		.audiences,
+		.process-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.audience-card + .audience-card {
+			border-left: 0;
+			border-top: 1px solid var(--line);
+		}
+	}
+
+	@media (max-width: 560px) {
+		.site-header,
+		.hero,
+		.section,
+		.quote-band,
+		.contact-section,
+		.site-footer {
+			padding-inline: 18px;
+		}
+
+		h1 {
+			font-size: 2.65rem;
+		}
+
+		h2 {
+			font-size: 2rem;
+		}
+
+		.hero-actions,
+		.contact-actions {
+			align-items: stretch;
+			flex-direction: column;
+		}
+
+		.button {
+			width: 100%;
+		}
+
+		.step {
+			min-height: auto;
+		}
+
+		.step span {
+			margin-bottom: 28px;
+		}
+	}
+</style>
