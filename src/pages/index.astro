@@ -1,39 +1,8 @@
 ---
-const supportAreas = [
-	"Konflikter, grænser og hverdagssituationer",
-	"Barnets følelser, adfærd og signaler",
-	"Samarbejde mellem forældre, institution og skole",
-	"Tryghed i det nye eller kommende forældreskab",
-	"Kulturelle forskelle og familieliv i Danmark",
-	"Konkrete redskaber, der kan bruges med det samme",
-];
-
-const processSteps = [
-	{
-		title: "Vi starter med jeres situation",
-		text: "Jeg lytter til det, der fylder, og hjælper jer med at få øje på mønstre, behov og handlemuligheder.",
-	},
-	{
-		title: "I får faglig sparring og konkrete redskaber",
-		text: "Samtalerne tager udgangspunkt i relationer, tilknytning, mentalisering og barnets følelsesmæssige behov.",
-	},
-	{
-		title: "Små justeringer bliver til ny retning",
-		text: "Målet er mere ro, større forståelse og et familieliv, hvor både børn og voksne føler sig bedre hjulpet.",
-	},
-];
-
 const trustSignals = [
 	"25+ års erfaring",
-	"Østerbro og online",
-	"Familier, skoler og institutioner",
-];
-
-const practicePoints = [
-	"Tilknytning",
-	"Mentalisering",
-	"Tryghedscirklen",
-	"Se Barnet Indefra",
+	"Dansk og engelsk",
+	"Hjemme, online og Østerbro",
 ];
 ---
 
@@ -44,7 +13,7 @@ const practicePoints = [
 		<meta name="viewport" content="width=device-width" />
 		<meta
 			name="description"
-			content="Familievejledning på Østerbro og online med Maria Baad. Faglig, kærlig og konkret støtte til familier og institutioner."
+			content="Samtaler og familievejledning med Maria Baad på Østerbro, hjemme hos jer eller online. Støtte til familier og praksisnære forløb for institutioner."
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>Maria Baad | Familievejledning</title>
@@ -61,8 +30,9 @@ const practicePoints = [
 			</a>
 			<nav class="main-nav" aria-label="Primær navigation">
 				<a href="#familier">Familier</a>
-				<a href="#institutioner">Institutioner</a>
+				<a href="#anbefaling">Anbefaling</a>
 				<a href="#om">Om mig</a>
+				<a href="#institutioner">Institutioner</a>
 				<a href="#kontakt">Kontakt</a>
 			</nav>
 		</header>
@@ -71,14 +41,14 @@ const practicePoints = [
 			<section class="hero" aria-labelledby="hero-title">
 				<div class="hero-copy">
 					<p class="eyebrow">Familievejledning på Østerbro og online</p>
-					<h1 id="hero-title">Tryg støtte til familier, der ønsker mere ro, retning og forståelse</h1>
+					<h1 id="hero-title">Samtaler og familievejledning</h1>
 					<p class="hero-lede">
-						Jeg tilbyder familiestøtte og vejledning med et kærligt, fordomsfrit og
-						fagligt stærkt udgangspunkt. Sammen finder vi konkrete veje videre i hverdagen.
+						Jeg hjælper forældre og familier, når noget føles svært, fastlåst eller
+						uoverskueligt.
 					</p>
 					<div class="hero-actions" aria-label="Vigtige handlinger">
 						<a class="button primary" href="#kontakt">Kontakt mig</a>
-						<a class="button secondary" href="#saadan">Se hvordan det foregår</a>
+						<a class="button secondary" href="#familier">Læs mere</a>
 					</div>
 					<ul class="trust-list" aria-label="Nøgletal">
 						{trustSignals.map((signal) => <li>{signal}</li>)}
@@ -92,120 +62,110 @@ const practicePoints = [
 							width="1000"
 							height="667"
 						/>
-						<div class="portrait-card">
-							<span>Maria Baad Andersen</span>
-							<strong>Familievejleder med blik for både barnets behov og de voksnes handlemuligheder.</strong>
-						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="audiences" aria-label="Målgrupper">
-				<a class="audience-card" id="familier" href="#hjaelp">
-					<span>For familier</span>
-					<strong>Hjælp til konflikter, trivsel, samarbejde og svære følelser.</strong>
-				</a>
-				<a class="audience-card institution" id="institutioner" href="#institutioner-indhold">
-					<span>For institutioner</span>
-					<strong>Praksisnære forløb om Tryghedscirklen, mentalisering og børns behov.</strong>
-				</a>
-			</section>
-
-			<section class="section split" id="hjaelp" aria-labelledby="help-title">
-				<div>
-					<p class="eyebrow">Hvordan jeg kan hjælpe</p>
-					<h2 id="help-title">Når familielivet kalder på nye handlemuligheder</h2>
+			<section class="section prose-section" id="familier" aria-labelledby="familier-title">
+				<div class="section-heading">
+					<p class="eyebrow">For familier</p>
+					<h2 id="familier-title">Samtaler og familievejledning</h2>
+				</div>
+				<div class="prose-flow">
+					<p>Jeg hjælper forældre og familier, når noget føles svært, fastlåst eller uoverskueligt.</p>
 					<p>
-						Forældreskab kan føles både kærligt, overvældende og svært at navigere i.
-						Jeg hjælper jer med at forstå, hvad der kan ligge bag barnets reaktioner, og
-						hvordan I som voksne kan møde barnet med mere tryghed.
-					</p>
-				</div>
-				<ul class="support-list" aria-label="Temaer jeg kan hjælpe med">
-					{supportAreas.map((area) => <li>{area}</li>)}
-				</ul>
-			</section>
-
-			<section class="section process" id="saadan" aria-labelledby="process-title">
-				<p class="eyebrow">Sådan foregår et forløb</p>
-				<h2 id="process-title">Et trygt rum med plads til både sårbarhed og konkrete løsninger</h2>
-				<div class="process-grid">
-					{processSteps.map((step, index) => (
-						<article class="step">
-							<span>{String(index + 1).padStart(2, "0")}</span>
-							<h3>{step.title}</h3>
-							<p>{step.text}</p>
-						</article>
-					))}
-				</div>
-			</section>
-
-			<section class="section about" id="om" aria-labelledby="about-title">
-				<div class="about-media" aria-label="Mit faglige fundament">
-					<div class="practice-panel">
-						<span class="practice-kicker">Fagligt fundament</span>
-						<ul>
-							{practicePoints.map((point) => <li>{point}</li>)}
-						</ul>
-					</div>
-				</div>
-				<div class="about-copy">
-					<p class="eyebrow">Hvem er jeg?</p>
-					<h2 id="about-title">Erfaren pædagog og familievejleder med blik for hele familien</h2>
-					<p>
-						Jeg har over 25 års erfaring med børn, familier og relationer. Jeg arbejder
-						tæt sammen med familier, der ønsker at skabe mere forståelse, glæde og håb i
-						hverdagen.
+						Sammen forsøger vi at skabe større forståelse for det, der ligger bag barnets reaktioner,
+						familiens mønstre og de situationer, der kalder på støtte, retning eller nye perspektiver.
 					</p>
 					<p>
-						Mit faglige fundament bygger blandt andet på tilknytning, mentalisering,
-						Tryghedscirklen og praksisnære redskaber, der kan bruges i familieliv,
-						daginstitutioner og skoler.
+						Jeg møder familier med varme, ærlighed og nysgerrighed — uanset om det handler om små eller
+						store børn, store følelser, konflikter, mistrivsel, tvivl i forældreskabet eller samarbejde
+						omkring barnet.
+					</p>
+					<p>Samtalerne kan foregå hjemme hos jer, online eller fra mit kontor på Østerbro i København.</p>
+					<p>
+						Jeg tilbyder vejledning på både dansk og engelsk og arbejder med både danske og internationale
+						familier.
 					</p>
 				</div>
 			</section>
 
-			<section class="quote-band" aria-labelledby="quote-title">
+			<section class="quote-band" id="anbefaling" aria-labelledby="quote-title">
 				<div>
 					<p class="eyebrow">Anbefaling</p>
-					<h2 id="quote-title">Familier fremhæver varme, faglighed og konkret hjælp</h2>
+					<h2 id="quote-title">
+						<a class="quote-title-link" href="#anbefaling">Anbefaling</a>
+					</h2>
 				</div>
-				<blockquote>
-					"Maria forstod at italesætte de udfordringer vi oplevede fra barnets perspektiv
-					med stor faglighed og en sødme der oser af kærlighed til børn og unge."
-					<cite>Susanne, mor til piger på 1 og 4 år</cite>
-				</blockquote>
 			</section>
 
-			<section class="section institution-section" id="institutioner-indhold" aria-labelledby="institution-title">
-				<div>
-					<p class="eyebrow">Til daginstitutioner og kommuner</p>
-					<h2 id="institution-title">Tryghed i praksis for personalegrupper</h2>
+			<section class="section prose-section" id="om" aria-labelledby="about-title">
+				<div class="section-heading">
+					<p class="eyebrow">Om mig</p>
+					<h2 id="about-title">Jeg hedder Maria Baad Andersen</h2>
+				</div>
+				<div class="prose-flow">
 					<p>
-						Jeg tilbyder kompetenceudvikling og praksisnære forløb med afsæt i
-						Tryghedscirklen og Se Barnet Indefra. Formålet er at skabe et fælles sprog og
-						styrke personalets blik for barnets behov bag adfærd.
+						Jeg hedder Maria Baad Andersen og arbejder som familievejleder med børn, forældre og familier.
+					</p>
+					<p>
+						Jeg hjælper familier med at skabe større forståelse for det, der bliver svært — hvad enten det
+						handler om trivsel, relationer, følelser eller usikkerhed i forældreskabet.
+					</p>
+					<p>
+						Det er vigtigt for mig at skabe et trygt rum, hvor mennesker føler sig mødt, forstået og mindre
+						alene i det, der er svært.
+					</p>
+					<p>
+						Jeg har mere end 25 års erfaring med arbejdet omkring børn og familier og arbejder blandt andet
+						med tilknytning, mentalisering og Tryghedscirklen.
+					</p>
+					<p>
+						Du kan læse mere om min faglige baggrund og erfaring på
+						<a
+							class="inline-link"
+							href="https://www.linkedin.com/in/maria-baad-andersen-6b454332a/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							LinkedIn
+						</a>
+						.
 					</p>
 				</div>
-				<div class="feature-panel">
-					<h3>Forløb kan indeholde</h3>
-					<ul>
-						<li>Introduktion til centrale begreber</li>
-						<li>Refleksionsøvelser fra egen praksis</li>
-						<li>Fokus på den voksnes rolle som tryg base</li>
-						<li>Anbefalinger til det videre arbejde</li>
-					</ul>
+			</section>
+
+			<section class="section prose-section institution-section" id="institutioner" aria-labelledby="institution-title">
+				<div class="section-heading">
+					<p class="eyebrow">For institutioner</p>
+					<h2 id="institution-title">Kompetenceudvikling og praksisnære forløb</h2>
+				</div>
+				<div class="prose-flow">
+					<p>
+						Jeg tilbyder kompetenceudvikling, supervision og praksisnære forløb for daginstitutioner, skoler
+						og kommuner — med afsæt i Tryghedscirklen og Se Barnet Indefra.
+					</p>
+					<p>
+						Med et nysgerrigt og respektfuldt udgangspunkt hjælper jeg personalegrupper med at forstå barnets
+						behov bag adfærden og skabe fælles refleksion, tydelighed og styrket trivsel i hverdagen.
+					</p>
+					<p>
+						Jeg har mange års erfaring med arbejdet omkring børn i udsatte positioner, tilknytning,
+						mentalisering og samarbejdet mellem børn, forældre og fagpersoner.
+					</p>
+					<p>
+						Jeg tilbyder blandt andet workshops, supervision, faciliterede forældreaftener og længerevarende
+						forløb tilpasset den enkelte institutions behov.
+					</p>
+					<p>Kontakt mig gerne for en uforpligtende samtale eller et konkret tilbud.</p>
 				</div>
 			</section>
 
 			<section class="contact-section" id="kontakt" aria-labelledby="contact-title">
 				<div>
 					<p class="eyebrow">Kontakt</p>
-					<h2 id="contact-title">Vil du høre, om jeg kan hjælpe jer?</h2>
-					<p>
-						Du er velkommen til at ringe, sende en SMS eller skrive en e-mail. Jeg
-						tilbyder samtaler hjemme, online eller på kontor på Østerbro.
-					</p>
+					<h2 id="contact-title">Kontakt mig gerne</h2>
+					<p>Kontakt mig gerne for en uforpligtende samtale eller et konkret tilbud.</p>
 				</div>
 				<div class="contact-actions">
 					<a class="button primary" href="tel:+4593901154">Ring til mig</a>
@@ -410,7 +370,7 @@ const practicePoints = [
 		max-width: 880px;
 		margin-bottom: 22px;
 		font-family: Georgia, "Times New Roman", serif;
-		font-size: clamp(3rem, 7.4vw, 6.35rem);
+		font-size: clamp(2.8rem, 6.7vw, 5.85rem);
 		font-weight: 500;
 	}
 
@@ -545,211 +505,41 @@ const practicePoints = [
 		object-position: center;
 	}
 
-	.portrait-card {
-		position: absolute;
-		z-index: 2;
-		right: clamp(16px, 4vw, 32px);
-		bottom: clamp(16px, 4vw, 32px);
-		left: clamp(16px, 4vw, 32px);
-		display: grid;
-		gap: 8px;
-		padding: 20px;
-		background: rgba(255, 253, 248, 0.9);
-		border: 1px solid var(--line);
-		border-radius: 8px;
-		box-shadow: var(--shadow-soft);
-		backdrop-filter: blur(16px);
-		-webkit-backdrop-filter: blur(16px);
-	}
-
-	.portrait-card span,
-	.practice-kicker {
-		color: var(--clay);
-		font-size: 0.82rem;
-		font-weight: 900;
-		text-transform: uppercase;
-	}
-
-	.portrait-card strong {
-		max-width: 32ch;
-		font-size: 1.05rem;
-		line-height: 1.34;
-	}
-
-	.audiences {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		border-block: 1px solid var(--line);
-	}
-
-	.audience-card {
-		display: grid;
-		gap: 12px;
-		min-height: 210px;
-		padding: clamp(24px, 4vw, 52px);
-		background: var(--white);
-		text-decoration: none;
-		transition:
-			background-color 180ms ease,
-			transform 180ms ease;
-	}
-
-	.audience-card:hover {
-		background: var(--clay-soft);
-	}
-
-	.audience-card + .audience-card {
-		border-left: 1px solid var(--line);
-	}
-
-	.audience-card span {
-		color: var(--clay);
-		font-weight: 800;
-	}
-
-	.audience-card strong {
-		max-width: 620px;
-		font-family: Georgia, "Times New Roman", serif;
-		font-size: clamp(1.55rem, 3vw, 2.55rem);
-		font-weight: 500;
-		line-height: 1.15;
-	}
-
-	.audience-card.institution {
-		background: var(--sage);
-	}
-
 	.section {
 		padding-block: clamp(70px, 10vw, 132px);
 	}
 
-	.split,
-	.about,
-	.institution-section,
-	.contact-section {
+	.prose-section {
 		display: grid;
-		grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
-		gap: clamp(32px, 6vw, 76px);
+		grid-template-columns: minmax(0, 52rem);
+		justify-content: center;
+		gap: 24px;
 		align-items: start;
 	}
 
-	.support-list,
-	.feature-panel ul {
-		display: grid;
-		gap: 12px;
-		margin: 0;
-		padding: 0;
-		list-style: none;
+	.section-heading {
+		max-width: 46rem;
 	}
 
-	.support-list li,
-	.feature-panel li {
-		position: relative;
-		padding: 16px 18px;
-		padding-left: 48px;
-		background: var(--white);
-		border: 1px solid var(--line);
-		border-radius: 8px;
+	.prose-flow {
+		max-width: 46rem;
 	}
 
-	.support-list li::before,
-	.feature-panel li::before {
-		position: absolute;
-		top: 20px;
-		left: 18px;
-		width: 14px;
-		height: 8px;
-		content: "";
-		border-bottom: 2px solid var(--sage-dark);
-		border-left: 2px solid var(--sage-dark);
-		transform: rotate(-45deg);
+	.prose-flow p + p {
+		margin-top: 18px;
 	}
 
-	.process {
-		background: var(--white);
-	}
-
-	.process-grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 18px;
-		margin-top: 34px;
-	}
-
-	.step {
-		min-height: 300px;
-		padding: 28px;
-		background: var(--paper);
-		border: 1px solid var(--line);
-		border-radius: 8px;
-		box-shadow: 0 1px 0 rgba(34, 48, 43, 0.05);
-	}
-
-	.step span {
-		display: inline-block;
-		margin-bottom: 48px;
-		color: var(--clay);
-		font-weight: 900;
-	}
-
-	.step p {
-		color: var(--muted);
-	}
-
-	.about {
-		align-items: center;
-	}
-
-	.practice-panel {
-		display: grid;
-		gap: 24px;
-		min-height: 360px;
-		align-content: center;
-		padding: clamp(26px, 5vw, 48px);
-		background:
-			linear-gradient(135deg, rgba(255, 253, 248, 0.76), rgba(217, 232, 236, 0.56)),
-			var(--sage-soft);
-		border: 1px solid var(--line);
-		border-radius: 8px;
-	}
-
-	.practice-panel ul {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 2px 28px;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	.practice-panel li {
-		position: relative;
-		min-height: 0;
-		padding: 18px 0 18px 22px;
-		border-bottom: 1px solid rgba(34, 48, 43, 0.12);
+	.inline-link {
 		color: var(--sage-dark);
-		font-family: Georgia, "Times New Roman", serif;
-		font-size: clamp(1.1rem, 2.2vw, 1.45rem);
-		line-height: 1.2;
-		text-align: left;
-	}
-
-	.practice-panel li::before {
-		position: absolute;
-		top: 1.45em;
-		left: 0;
-		width: 7px;
-		height: 7px;
-		content: "";
-		background: var(--clay);
-		border-radius: 50%;
-		opacity: 0.72;
+		font-weight: 700;
+		text-underline-offset: 4px;
 	}
 
 	.quote-band {
 		display: grid;
-		grid-template-columns: minmax(0, 0.72fr) minmax(320px, 1fr);
-		gap: clamp(28px, 6vw, 72px);
+		grid-template-columns: minmax(0, 1fr);
+		justify-items: start;
+		gap: 16px;
 		padding-block: clamp(60px, 9vw, 112px);
 		background: var(--sage-dark);
 		color: var(--white);
@@ -760,38 +550,53 @@ const practicePoints = [
 	}
 
 	.quote-band h2 {
+		margin-bottom: 0;
 		font-size: clamp(2rem, 4vw, 3.6rem);
 	}
 
-	blockquote {
-		margin: 0;
+	.quote-title-link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 52px;
+		padding: 12px 20px;
+		border: 1px solid rgba(255, 253, 248, 0.28);
+		border-radius: 7px;
+		background: rgba(255, 253, 248, 0.08);
 		color: var(--white);
-		font-family: Georgia, "Times New Roman", serif;
-		font-size: clamp(1.45rem, 3vw, 2.6rem);
-		line-height: 1.24;
+		font-size: clamp(1.7rem, 3.5vw, 3rem);
+		font-weight: 500;
+		line-height: 1;
+		text-decoration: none;
+		transition:
+			transform 180ms ease,
+			background-color 180ms ease,
+			border-color 180ms ease,
+			box-shadow 180ms ease;
 	}
 
-	cite {
-		display: block;
-		margin-top: 24px;
-		color: rgba(255, 253, 248, 0.78);
-		font-family:
-			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-		font-size: 1rem;
-		font-style: normal;
-		font-weight: 800;
+	.quote-title-link:hover,
+	.quote-title-link:focus-visible {
+		transform: translateY(-1px);
+		background: rgba(255, 253, 248, 0.14);
+		border-color: rgba(255, 253, 248, 0.42);
+		box-shadow: 0 12px 28px rgba(17, 28, 26, 0.16);
 	}
 
 	.institution-section {
-		background: var(--paper);
+		padding-top: clamp(44px, 6vw, 72px);
+		background: var(--sage-dark);
+		color: var(--white);
 	}
 
-	.feature-panel {
-		padding: clamp(24px, 4vw, 40px);
-		background: var(--white);
-		border: 1px solid var(--line);
-		border-radius: 8px;
-		box-shadow: var(--shadow);
+	.institution-section .eyebrow {
+		color: var(--butter);
+	}
+
+	.institution-section h2,
+	.institution-section p,
+	.institution-section .inline-link {
+		color: var(--white);
 	}
 
 	.contact-section {
@@ -858,9 +663,8 @@ const practicePoints = [
 		}
 
 		.hero,
-		.split,
-		.about,
 		.institution-section,
+		.prose-section,
 		.quote-band,
 		.contact-section {
 			grid-template-columns: 1fr;
@@ -879,15 +683,6 @@ const practicePoints = [
 			object-position: center 36%;
 		}
 
-		.audiences,
-		.process-grid {
-			grid-template-columns: 1fr;
-		}
-
-		.audience-card + .audience-card {
-			border-left: 0;
-			border-top: 1px solid var(--line);
-		}
 	}
 
 	@media (max-width: 560px) {
@@ -901,7 +696,7 @@ const practicePoints = [
 		}
 
 		h1 {
-			font-size: 2.65rem;
+			font-size: 2.5rem;
 		}
 
 		h2 {
@@ -924,20 +719,5 @@ const practicePoints = [
 			width: 100%;
 		}
 
-		.step {
-			min-height: auto;
-		}
-
-		.step span {
-			margin-bottom: 28px;
-		}
-
-		.practice-panel ul {
-			grid-template-columns: 1fr;
-		}
-
-		.practice-panel li {
-			min-height: 72px;
-		}
 	}
 </style>
