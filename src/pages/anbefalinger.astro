@@ -1,0 +1,550 @@
+---
+const familyRecommendations = [
+	{
+		text: `Maria har hjulpet os i et forløb med vores følsomme børnehavebarn, der reagerede voldsomt på forandring i forbindelse med flytning og at få en ny søskende. Maria forstod at italesætte de udfordinger vi oplevede fra barnets perspektiv med stor faglighed og en sødme der oser af kærlighed til børn og unge. Vi følte os trygt taget i hånden og opmuntret til at finde det bedste frem i os selv og hinanden.`,
+		author: "Susanne, mor til piger på 1 og 4 år.",
+	},
+	{
+		text: `Maria er uden tvivl et af de mest imødekommende og kompetente mennesker, vi har mødt. Hun har været afgørende for vores forståelse af årsagen til vores datters voldsomme udbrud og vedvarende underskud. Hvor utallige pædagoger fra daginstitutionen ikke har kunnet finde en løsning, havde Maria svaret. Gennem enkle, men effektive værktøjer til at forstå vores datters behov og følelser har Maria hjulpet os med at vende vores datters underskud til et overskud, så hun i dag trives. Det er svært at beskrive, hvor stor en positiv forandring dette har skabt for vores datter. Vi kan derfor kun give Maria vores varmeste anbefaling.`,
+		author: "Sebastian, far til piger på 2 og 5 år.",
+	},
+	{
+		text: `Uden dig Maria, så ved jeg ærligt talt ikke, hvor min familie ville have været i dag! Som jeg siger, når jeg fortæller om dig og den kæmpe hjælp du har været for mig - “alle burde have en Maria som min”. Du fik mig på rette vej til den gode relation mellem min datter og jeg igen. Du hjalp mig til at mindske den surhed jeg havde konstant og fik mig til at se min datter og hendes egentlige behov og føleser. Du har vist mig hvordan jeg takler min datters vredesudbrud og hvordan jeg får hende til at føle sig tryg - også til at være lige den hun er. Jeg er stadig benovet over, hvor hurtigt min datter har taget imod og reagerer på det jeg gør anderledes. Efter du var med til min datters trivselsamtale fik vi virkelig sat skub i samarbejdet med lærer og pædagoger med de principper vi to har arbejdet på, nu fungerer både aflevering og indlæring. De har fået et nyt syn på, hvordan børn kan mødes og dette bruges på hele klassen og det er helt fantastisk for mig at se mit barn vokse og trives.`,
+		author: "Louise, mor til piger på 7 og 12 år",
+	},
+	{
+		text: `We are deeply grateful to Maria for her invaluable guidance, which has been provided in English in both online and offline sessions. Her practical tips and compassionate advice have helped us become more caring and effective parents while fostering a nurturing environment for our children. We highly recommend her support to parents seeking to strengthen their parenting skills and family bonds.`,
+		author: "Jonas, far til drenge på 3 og 4 år",
+	},
+	{
+		text: `Familievejledning med Maria har givet mig et nyt syn på, hvordan jeg imødekommer og rummer min søn. Det har givet mig konkrete værktøjer til at kunne komme videre i aktuelle situationer. Jeg er alene mor og har derfor til tider brug for en sparringspartner ifht. hvordan jeg møder min søn bedst. Her er Maria virkelig forstående og jeg føler mig altid mødt, i de udfordringer jeg har. Jeg har også haft Maria med til skole samtaler. Her er hun et ekstra øre og sætter fx også spørgsmål, som jeg ikke lige husker på.`,
+		author: "Gitte, mor til dreng på 12 år",
+	},
+];
+
+const institutionRecommendations = [
+	{
+		text: `Når jeg står i en situation, hvor jeg gerne vil yde mit bedste og give barnet de bedste muligheder for at trives, så spørger jeg mig selv: Hvad ville Maria have gjort? Maria har i vores børnehave både hjulpet pædagoger og forældre med bedre at forstå børns udtryk. Maria har hjulpet hele personalegruppen med at se bag barnets adfærd og zoome ind på de budskaber, som betyder noget. I svære situationer giver hun nye handlemuligheder – det styrker relationen. Man bliver både klogere på egne handlemønstre og får øjnene op for barnets positive intentioner bag den uhensigtsmæssige adfærd. Vi har haft Maria ude til forældremøde, hvor hun har inspireret og sparret med forældre i almindelige hverdagssituationer med bl.a. søskendekonflikter, krav og følelsesudtryk. Maria formidler med sit rummelige, anerkendende væsen og skaber tryghed samt kæmpe respekt for al hendes viden og resultater med at vende en relation i knuder til et ressourcefokuseret udviklingsmiljø. Vi er slet ikke færdige med at blive dygtigere med Maria- Vi vil have mere!`,
+		author: "Maj-Britt, institutionsleder",
+	},
+	{
+		text: `Vi havde fornøjelsen af at have Maria ude i vores Børnehave til en forældreaften under overskriften Se bag dit barns adfærd – og forstå dets behov. Det var en virkelig god investering som vi varmt kan anbefale. Maria formår at formidle et komplekst emne med en sjælden kombination af faglig tyngde, nærvær og humor. Hun skaber et rum, hvor forældre føler sig set, mødt og inspireret og hvor der bliver grint undervejs, selv når emnerne går tæt på. Det var tydeligt, at forældrene gik derfra med konkrete redskaber, nye perspektiver og en større forståelse for deres børns følelsesmæssige behov. Mange gav udtryk for, at de kunne spejle sig i hendes eksempler og følte sig lettede over, at det ”ikke bare var dem”, der oplevede udfordringer i familielivet. Som leder og deltager kan jeg kun sige, at det var et vigtigt og fedt oplæg, og jeg giver Maria min varmeste anbefaling. Hun efterlader både hjerte og hjerne i bevægelse og vi glæder os til at invitere hende igen.`,
+		author: "Tine, institutionsleder",
+	},
+	{
+		text: `At følge et forløb med Maria har været en stor gave for mig, -både som pædagog og som leder, værktøjerne har lige siden ligget øverst i min skuffe. Maria formår at gøre det svære og uløselige til noget meningsfuldt, simpelt, let forståeligt og ikke mindst håndterbart og brugbart. Efter at have oplevet et forældreoplæg vil jeg sige at Maria rammer plet og formår at få alle med, med jordnære eksempler og sit rare og rummende væsen.`,
+		author: "Henriette, institutionsleder",
+	},
+];
+---
+
+<html lang="da">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta
+			name="description"
+			content="Anbefalinger fra familier og institutioner, som har samarbejdet med Maria Baad."
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<title>Anbefalinger | Maria Baad</title>
+	</head>
+	<body>
+		<a class="skip-link" href="#indhold">Spring til indhold</a>
+		<header class="site-header">
+			<a class="brand" href="/" aria-label="Maria Baad forside">
+				<span class="brand-mark">MB</span>
+				<span>
+					<strong>Maria Baad</strong>
+					<small>Familievejledning</small>
+				</span>
+			</a>
+			<nav class="main-nav" aria-label="Primær navigation">
+				<a href="/">Forside</a>
+				<a href="/anbefalinger" aria-current="page">Anbefalinger</a>
+				<a href="/#institutioner">Institutioner</a>
+				<a href="/#kontakt">Kontakt</a>
+			</nav>
+		</header>
+
+		<main id="indhold">
+			<section class="page-hero" aria-labelledby="page-title">
+				<div class="page-hero-copy">
+					<p class="eyebrow">Anbefalinger</p>
+					<h1 id="page-title">Det siger familier og institutioner</h1>
+					<p class="page-intro">
+						Her kan du læse anbefalinger fra familier og fagpersoner, som har samarbejdet med mig.
+					</p>
+				</div>
+				<div class="page-actions">
+					<a class="pill-link" href="#institutioner-anbefalinger">Til institutionsanbefalinger</a>
+				</div>
+			</section>
+
+			<section class="review-section" aria-labelledby="familie-anbefalinger">
+				<div class="section-heading">
+					<p class="eyebrow">For familier</p>
+					<h2 id="familie-anbefalinger">Anbefalinger fra familier</h2>
+				</div>
+				<div class="review-list">
+					{familyRecommendations.map((recommendation) => (
+						<article class="review-card">
+							<p>{recommendation.text}</p>
+							<cite>{recommendation.author}</cite>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section
+				class="review-section institution-band"
+				id="institutioner-anbefalinger"
+				aria-labelledby="institution-review-title"
+			>
+				<div class="section-heading">
+					<p class="eyebrow">For institutioner</p>
+					<h2 id="institution-review-title">Institutionsanbefalinger</h2>
+				</div>
+				<div class="review-list">
+					{institutionRecommendations.map((recommendation) => (
+						<article class="review-card review-card-dark">
+							<p>{recommendation.text}</p>
+							<cite>{recommendation.author}</cite>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section class="contact-section" id="kontakt" aria-labelledby="contact-title">
+				<div>
+					<p class="eyebrow">Kontakt</p>
+					<h2 id="contact-title">Kontakt mig gerne</h2>
+					<p>Kontakt mig gerne for en uforpligtende samtale eller et konkret tilbud.</p>
+				</div>
+				<div class="contact-actions">
+					<a class="button primary" href="tel:+4593901154">Ring til mig</a>
+					<a class="button secondary" href="mailto:kontaktmariabaad@gmail.com">Skriv e-mail</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<p>Maria Baad</p>
+			<p>Telefon: <a href="tel:+4593901154">+45 93901154</a></p>
+			<p>CVR: 45155099</p>
+		</footer>
+	</body>
+</html>
+
+<style>
+	:root {
+		color-scheme: light;
+		--paper: #faf6ef;
+		--surface: #fffdf8;
+		--ink: #1f2d2a;
+		--muted: #5f6f69;
+		--sage: #dce8df;
+		--sage-soft: #edf4ee;
+		--sage-dark: #31564e;
+		--clay: #a95d4c;
+		--butter: #f2d88f;
+		--white: #fffdf8;
+		--line: rgba(34, 48, 43, 0.14);
+		--shadow: 0 22px 55px rgba(34, 48, 43, 0.1);
+		--shadow-soft: 0 14px 32px rgba(34, 48, 43, 0.08);
+		font-family:
+			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 96px;
+	}
+
+	body {
+		margin: 0;
+		background: var(--paper);
+		color: var(--ink);
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	:focus-visible {
+		outline: 3px solid var(--clay);
+		outline-offset: 4px;
+	}
+
+	.skip-link {
+		position: fixed;
+		top: 12px;
+		left: 12px;
+		z-index: 100;
+		transform: translateY(-140%);
+		padding: 10px 14px;
+		background: var(--ink);
+		border-radius: 7px;
+		color: var(--white);
+		font-weight: 800;
+		text-decoration: none;
+		transition: transform 180ms ease;
+	}
+
+	.skip-link:focus-visible {
+		transform: translateY(0);
+	}
+
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 20;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		padding: 18px clamp(20px, 5vw, 72px);
+		background:
+			linear-gradient(180deg, rgba(237, 244, 238, 0.94), rgba(255, 253, 248, 0.9)),
+			rgba(255, 253, 248, 0.9);
+		border-bottom: 1px solid rgba(34, 48, 43, 0.18);
+		box-shadow: 0 8px 22px rgba(34, 48, 43, 0.045);
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
+	}
+
+	.brand {
+		display: inline-flex;
+		align-items: center;
+		gap: 12px;
+		text-decoration: none;
+	}
+
+	.brand-mark {
+		display: grid;
+		width: 44px;
+		height: 44px;
+		place-items: center;
+		border-radius: 50%;
+		background: linear-gradient(145deg, var(--sage-dark), #243e39);
+		color: var(--white);
+		font-weight: 700;
+		box-shadow: var(--shadow-soft);
+	}
+
+	.brand strong,
+	.brand small {
+		display: block;
+	}
+
+	.brand small,
+	.eyebrow {
+		color: var(--muted);
+		font-size: 0.84rem;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	.main-nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 8px 22px;
+		font-size: 0.95rem;
+	}
+
+	.main-nav a {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+		text-underline-offset: 5px;
+	}
+
+	.main-nav a:hover,
+	.main-nav a:focus-visible,
+	.main-nav a[aria-current="page"] {
+		color: var(--clay);
+	}
+
+	.page-hero,
+	.review-section,
+	.contact-section,
+	.site-footer {
+		padding-inline: clamp(20px, 5vw, 72px);
+	}
+
+	.page-hero {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 28px;
+		padding-block: clamp(56px, 8vw, 88px) clamp(36px, 5vw, 52px);
+		background:
+			linear-gradient(180deg, rgba(220, 232, 223, 0.62), rgba(250, 246, 239, 0) 40%),
+			var(--paper);
+	}
+
+	.page-hero-copy {
+		max-width: 48rem;
+	}
+
+	.page-actions {
+		display: flex;
+		align-items: flex-start;
+	}
+
+	h1,
+	h2,
+	p {
+		margin-top: 0;
+	}
+
+	h1,
+	h2 {
+		line-height: 1.08;
+		letter-spacing: 0;
+		font-family: Georgia, "Times New Roman", serif;
+		font-weight: 500;
+	}
+
+	h1 {
+		margin-bottom: 22px;
+		font-size: clamp(2.7rem, 6vw, 5.2rem);
+	}
+
+	h2 {
+		margin-bottom: 18px;
+		font-size: clamp(2rem, 4vw, 3.8rem);
+	}
+
+	.page-intro,
+	.contact-section p {
+		max-width: 42rem;
+		color: var(--muted);
+		font-size: 1.08rem;
+	}
+
+	.pill-link,
+	.button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		min-height: 48px;
+		padding: 13px 20px;
+		border: 1px solid var(--line);
+		border-radius: 7px;
+		background: var(--surface);
+		color: var(--sage-dark);
+		font-weight: 800;
+		text-decoration: none;
+		transition:
+			transform 180ms ease,
+			box-shadow 180ms ease,
+			background-color 180ms ease,
+			border-color 180ms ease;
+	}
+
+	.pill-link:hover,
+	.button:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-soft);
+	}
+
+	.pill-link::after,
+	.button.primary::after,
+	.button.secondary::after {
+		content: "";
+		width: 0.58em;
+		height: 0.58em;
+		border-top: 2px solid currentColor;
+		border-right: 2px solid currentColor;
+		transform: rotate(45deg);
+	}
+
+	.review-section {
+		padding-block: clamp(34px, 5vw, 48px) clamp(64px, 8vw, 104px);
+	}
+
+	.section-heading {
+		max-width: 44rem;
+		margin-bottom: 30px;
+	}
+
+	.review-list {
+		display: grid;
+		gap: 18px;
+	}
+
+	.review-card {
+		padding: clamp(24px, 4vw, 36px);
+		background: rgba(255, 253, 248, 0.86);
+		border: 1px solid var(--line);
+		border-radius: 8px;
+		box-shadow: var(--shadow-soft);
+	}
+
+	.review-card p {
+		margin-bottom: 0;
+		font-size: 1.06rem;
+		line-height: 1.75;
+	}
+
+	.review-card cite {
+		display: block;
+		margin-top: 18px;
+		color: var(--clay);
+		font-style: normal;
+		font-weight: 700;
+	}
+
+	.institution-band {
+		background: var(--sage-dark);
+		color: var(--white);
+	}
+
+	.institution-band .eyebrow {
+		color: var(--butter);
+	}
+
+	.institution-band h2 {
+		color: var(--white);
+	}
+
+	.review-card-dark {
+		background: rgba(255, 253, 248, 0.08);
+		border-color: rgba(255, 253, 248, 0.18);
+		box-shadow: none;
+	}
+
+	.review-card-dark p,
+	.review-card-dark cite {
+		color: var(--white);
+	}
+
+	.review-card-dark cite {
+		color: rgba(255, 253, 248, 0.82);
+	}
+
+	.contact-section {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		padding-block: clamp(56px, 8vw, 88px);
+		background:
+			linear-gradient(120deg, rgba(255, 253, 248, 0.45), transparent 58%),
+			var(--butter);
+	}
+
+	.contact-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.button.primary {
+		background: var(--sage-dark);
+		border-color: transparent;
+		color: var(--white);
+	}
+
+	.button.secondary {
+		background: transparent;
+		color: var(--ink);
+	}
+
+	.site-footer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 12px 24px;
+		padding-block: 28px;
+		background: var(--ink);
+		color: var(--white);
+	}
+
+	.site-footer p {
+		margin: 0;
+	}
+
+	.site-footer a {
+		text-decoration-color: rgba(255, 253, 248, 0.5);
+		text-underline-offset: 4px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			scroll-behavior: auto !important;
+			transition-duration: 0.01ms !important;
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.site-header,
+		.page-hero,
+		.contact-section {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.main-nav {
+			width: 100%;
+			overflow-x: auto;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			padding-bottom: 2px;
+			scrollbar-width: none;
+		}
+
+		.main-nav::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.site-header,
+		.page-hero,
+		.review-section,
+		.contact-section,
+		.site-footer {
+			padding-inline: 18px;
+		}
+
+		h1 {
+			font-size: 2.45rem;
+		}
+
+		h2 {
+			font-size: 2rem;
+		}
+
+		.page-intro,
+		.review-card p,
+		.contact-section p {
+			font-size: 1rem;
+		}
+
+		.pill-link,
+		.button {
+			width: 100%;
+		}
+
+		.contact-actions {
+			width: 100%;
+			flex-direction: column;
+		}
+	}
+</style>
