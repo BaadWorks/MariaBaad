@@ -4,6 +4,11 @@ const trustSignals = [
 	"Dansk og engelsk",
 	"Hjemme, online og Østerbro",
 ];
+
+const featuredRecommendation = {
+	text: `Maria is super professional, deeply empathetic, and a superb people person. She has an extraordinary ability to listen, guide, and create a safe space for honest conversations.`,
+	author: "",
+};
 ---
 
 <html lang="da">
@@ -30,7 +35,7 @@ const trustSignals = [
 			</a>
 			<nav class="main-nav" aria-label="Primær navigation">
 				<a href="#familier">Familier</a>
-				<a href="#anbefaling">Anbefaling</a>
+				<a href="/anbefalinger">Anbefalinger</a>
 				<a href="#om">Om mig</a>
 				<a href="#institutioner">Institutioner</a>
 				<a href="#kontakt">Kontakt</a>
@@ -66,7 +71,7 @@ const trustSignals = [
 				</div>
 			</section>
 
-			<section class="section prose-section" id="familier" aria-labelledby="familier-title">
+			<section class="section prose-section surface-section" id="familier" aria-labelledby="familier-title">
 				<div class="section-heading">
 					<p class="eyebrow">For familier</p>
 					<h2 id="familier-title">Samtaler og familievejledning</h2>
@@ -91,18 +96,22 @@ const trustSignals = [
 			</section>
 
 			<section class="quote-band" id="anbefaling" aria-labelledby="quote-title">
-				<div>
-					<p class="eyebrow">Anbefaling</p>
-					<h2 id="quote-title">
-						<a class="quote-title-link" href="#anbefaling">Anbefaling</a>
-					</h2>
+				<div class="quote-band-head">
+					<div>
+						<p class="eyebrow">Anbefaling</p>
+						<h2 id="quote-title">Det siger familierne</h2>
+					</div>
+					<a class="quote-link" href="/anbefalinger">Alle anbefalinger</a>
 				</div>
+				<blockquote class="featured-quote">
+					<p>{featuredRecommendation.text}</p>
+					{featuredRecommendation.author && <cite>{featuredRecommendation.author}</cite>}
+				</blockquote>
 			</section>
 
-			<section class="section prose-section" id="om" aria-labelledby="about-title">
+			<section class="section prose-section surface-section" id="om" aria-label="Om mig">
 				<div class="section-heading">
 					<p class="eyebrow">Om mig</p>
-					<h2 id="about-title">Jeg hedder Maria Baad Andersen</h2>
 				</div>
 				<div class="prose-flow">
 					<p>
@@ -382,11 +391,6 @@ const trustSignals = [
 		font-weight: 500;
 	}
 
-	h3 {
-		margin-bottom: 10px;
-		font-size: 1.2rem;
-	}
-
 	.hero-lede,
 	.section p,
 	.contact-section p {
@@ -403,7 +407,8 @@ const trustSignals = [
 		margin-top: 30px;
 	}
 
-	.button {
+	.button,
+	.quote-link {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -423,7 +428,8 @@ const trustSignals = [
 		touch-action: manipulation;
 	}
 
-	.button:hover {
+	.button:hover,
+	.quote-link:hover {
 		transform: translateY(-2px);
 		box-shadow: var(--shadow-soft);
 	}
@@ -440,7 +446,8 @@ const trustSignals = [
 	}
 
 	.button.primary::after,
-	.button.secondary::after {
+	.button.secondary::after,
+	.quote-link::after {
 		content: "";
 		width: 0.58em;
 		height: 0.58em;
@@ -468,8 +475,7 @@ const trustSignals = [
 		font-weight: 800;
 	}
 
-	.hero-media,
-	.about-media {
+	.hero-media {
 		min-width: 0;
 	}
 
@@ -517,10 +523,11 @@ const trustSignals = [
 		align-items: start;
 	}
 
-	.section-heading {
-		max-width: 46rem;
+	.surface-section {
+		background: #E1CCBE;
 	}
 
+	.section-heading,
 	.prose-flow {
 		max-width: 46rem;
 	}
@@ -537,9 +544,7 @@ const trustSignals = [
 
 	.quote-band {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr);
-		justify-items: start;
-		gap: 16px;
+		gap: 28px;
 		padding-block: clamp(60px, 9vw, 112px);
 		background: var(--sage-dark);
 		color: var(--white);
@@ -551,36 +556,43 @@ const trustSignals = [
 
 	.quote-band h2 {
 		margin-bottom: 0;
+		color: var(--white);
 		font-size: clamp(2rem, 4vw, 3.6rem);
 	}
 
-	.quote-title-link {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 52px;
-		padding: 12px 20px;
-		border: 1px solid rgba(255, 253, 248, 0.28);
-		border-radius: 7px;
-		background: rgba(255, 253, 248, 0.08);
-		color: var(--white);
-		font-size: clamp(1.7rem, 3.5vw, 3rem);
-		font-weight: 500;
-		line-height: 1;
-		text-decoration: none;
-		transition:
-			transform 180ms ease,
-			background-color 180ms ease,
-			border-color 180ms ease,
-			box-shadow 180ms ease;
+	.quote-band-head {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 20px;
 	}
 
-	.quote-title-link:hover,
-	.quote-title-link:focus-visible {
-		transform: translateY(-1px);
-		background: rgba(255, 253, 248, 0.14);
-		border-color: rgba(255, 253, 248, 0.42);
-		box-shadow: 0 12px 28px rgba(17, 28, 26, 0.16);
+	.quote-link {
+		background: rgba(255, 253, 248, 0.08);
+		border-color: rgba(255, 253, 248, 0.28);
+		color: var(--white);
+	}
+
+	.featured-quote {
+		margin: 0;
+		max-width: 54rem;
+	}
+
+	.featured-quote p {
+		margin: 0;
+		color: var(--white);
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(1.4rem, 3vw, 2.3rem);
+		line-height: 1.3;
+	}
+
+	.featured-quote cite {
+		display: block;
+		margin-top: 22px;
+		color: rgba(255, 253, 248, 0.82);
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 700;
 	}
 
 	.institution-section {
@@ -665,7 +677,6 @@ const trustSignals = [
 		.hero,
 		.institution-section,
 		.prose-section,
-		.quote-band,
 		.contact-section {
 			grid-template-columns: 1fr;
 		}
@@ -683,15 +694,19 @@ const trustSignals = [
 			object-position: center 36%;
 		}
 
+		.quote-band-head {
+			flex-direction: column;
+			align-items: flex-start;
+		}
 	}
 
 	@media (max-width: 560px) {
 		.site-header,
 		.hero,
 		.section,
-		.quote-band,
+		quote-band,
 		.contact-section,
-		.site-footer {
+		site-footer {
 			padding-inline: 18px;
 		}
 
@@ -705,7 +720,8 @@ const trustSignals = [
 
 		.hero-lede,
 		.section p,
-		.contact-section p {
+		.contact-section p,
+		.featured-quote cite {
 			font-size: 1rem;
 		}
 
@@ -715,9 +731,9 @@ const trustSignals = [
 			flex-direction: column;
 		}
 
-		.button {
+		.button,
+		.quote-link {
 			width: 100%;
 		}
-
 	}
 </style>
