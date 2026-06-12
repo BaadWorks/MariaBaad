@@ -60,12 +60,21 @@ const institutionRecommendations = [
 					<small>Familievejledning</small>
 				</span>
 			</a>
-			<nav class="main-nav" aria-label="Primær navigation">
-				<a href="/">Forside</a>
-				<a href="/anbefalinger" aria-current="page">Anbefalinger</a>
-				<a href="/#institutioner">Institutioner</a>
-				<a href="/#kontakt">Kontakt</a>
-			</nav>
+			<div class="header-tools">
+				<nav class="main-nav" aria-label="Primær navigation">
+					<a href="/">Forside</a>
+					<a href="/anbefalinger" aria-current="page">Anbefalinger</a>
+					<a href="/#institutioner">Institutioner</a>
+					<a href="/#kontakt">Kontakt</a>
+				</nav>
+				<label class="language-switcher" data-language="da" aria-label="Vælg sprog">
+					<span class="sr-only">Vælg sprog</span>
+					<select name="language" onchange="if (this.value) window.location.href = this.value;">
+						<option value="/anbefalinger" selected>Dansk</option>
+						<option value="/en/testimonials">English</option>
+					</select>
+				</label>
+			</div>
 		</header>
 
 		<main id="indhold">
@@ -260,18 +269,129 @@ const institutionRecommendations = [
 		font-size: 0.95rem;
 	}
 
+	.header-tools {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+	}
+
 	.main-nav a {
 		min-height: 44px;
 		display: inline-flex;
 		align-items: center;
 		text-decoration: none;
 		text-underline-offset: 5px;
+		white-space: nowrap;
+		flex: 0 0 auto;
 	}
 
 	.main-nav a:hover,
 	.main-nav a:focus-visible,
 	.main-nav a[aria-current="page"] {
 		color: var(--clay);
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.language-switcher {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		min-width: 138px;
+	}
+
+	.language-switcher::before {
+		content: "";
+		position: absolute;
+		left: 13px;
+		width: 18px;
+		height: 14px;
+		border: 1px solid rgba(52, 82, 74, 0.16);
+		border-radius: 3px;
+		background-color: #c60c30;
+		background-image:
+			linear-gradient(90deg, transparent 0 31%, #ffffff 31% 43%, transparent 43% 100%),
+			linear-gradient(transparent 0 41%, #ffffff 41% 59%, transparent 59% 100%);
+		box-shadow: 0 1px 2px rgba(31, 45, 42, 0.12);
+		pointer-events: none;
+	}
+
+	.language-switcher[data-language="en"]::before {
+		background-color: #0a3a8a;
+		background-image:
+			linear-gradient(90deg, transparent 0 43%, #ffffff 43% 57%, transparent 57% 100%),
+			linear-gradient(transparent 0 43%, #ffffff 43% 57%, transparent 57% 100%),
+			linear-gradient(90deg, transparent 0 46%, #c8102e 46% 54%, transparent 54% 100%),
+			linear-gradient(transparent 0 46%, #c8102e 46% 54%, transparent 54% 100%),
+			linear-gradient(33deg, transparent 0 41%, #ffffff 41% 48%, transparent 48% 52%, #ffffff 52% 59%, transparent 59% 100%),
+			linear-gradient(-33deg, transparent 0 41%, #ffffff 41% 48%, transparent 48% 52%, #ffffff 52% 59%, transparent 59% 100%),
+			linear-gradient(33deg, transparent 0 45%, #c8102e 45% 47.5%, transparent 47.5% 52.5%, #c8102e 52.5% 55%, transparent 55% 100%),
+			linear-gradient(-33deg, transparent 0 45%, #c8102e 45% 47.5%, transparent 47.5% 52.5%, #c8102e 52.5% 55%, transparent 55% 100%);
+	}
+
+	.language-switcher::after {
+		position: absolute;
+		right: 14px;
+		width: 7px;
+		height: 7px;
+		content: "";
+		border-right: 1.8px solid currentColor;
+		border-bottom: 1.8px solid currentColor;
+		transform: translateY(-35%) rotate(45deg);
+		color: var(--sage-dark);
+		pointer-events: none;
+	}
+
+	.language-switcher select {
+		width: 100%;
+		min-height: 44px;
+		padding: 10px 38px 10px 38px;
+		border: 1px solid rgba(52, 82, 74, 0.16);
+		border-radius: 7px;
+		background:
+			linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 252, 246, 0.96));
+		box-shadow:
+			0 1px 0 rgba(255, 255, 255, 0.7) inset,
+			0 10px 24px rgba(52, 82, 74, 0.08);
+		color: var(--ink);
+		font: inherit;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		cursor: pointer;
+		transition:
+			border-color 0.2s ease,
+			box-shadow 0.2s ease,
+			background-color 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	.language-switcher select:hover {
+		border-color: rgba(52, 82, 74, 0.26);
+		box-shadow:
+			0 1px 0 rgba(255, 255, 255, 0.72) inset,
+			0 14px 26px rgba(52, 82, 74, 0.11);
+	}
+
+	.language-switcher select:focus-visible {
+		outline: none;
+		border-color: rgba(52, 82, 74, 0.34);
+		box-shadow:
+			0 0 0 4px rgba(108, 140, 128, 0.16),
+			0 1px 0 rgba(255, 255, 255, 0.72) inset,
+			0 14px 26px rgba(52, 82, 74, 0.12);
 	}
 
 	.page-hero,
@@ -500,6 +620,13 @@ const institutionRecommendations = [
 			align-items: flex-start;
 		}
 
+		.header-tools {
+			width: 100%;
+			flex-direction: column;
+			align-items: stretch;
+			gap: 10px;
+		}
+
 		.main-nav {
 			width: 100%;
 			overflow-x: auto;
@@ -511,6 +638,10 @@ const institutionRecommendations = [
 
 		.main-nav::-webkit-scrollbar {
 			display: none;
+		}
+
+		.language-switcher {
+			width: 100%;
 		}
 	}
 
