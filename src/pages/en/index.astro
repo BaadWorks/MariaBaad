@@ -6,7 +6,7 @@ const trustSignals = [
 ];
 
 const featuredRecommendation = {
-	text: `Maria is super professional, deeply empathetic, and a superb people person. She has an extraordinary ability to listen, guide, and create a safe space for honest conversations.`,
+	text: `“Maria is super professional, deeply empathetic, and a superb people person. She has an extraordinary ability to listen, guide, and create a safe space for honest conversations.”`,
 	author: "",
 };
 ---
@@ -71,7 +71,7 @@ const featuredRecommendation = {
 				<div class="hero-media" aria-label="A brief introduction">
 					<div class="portrait-panel">
 						<img
-							src="/images/maria-baad-hero.webp"
+							src="/images/maria-baad-hero.jpg"
 							alt="Maria Baad in a calm, bright portrait"
 							width="1000"
 							height="667"
@@ -258,8 +258,8 @@ const featuredRecommendation = {
 		gap: 24px;
 		padding: 18px clamp(20px, 5vw, 72px);
 		background:
-			linear-gradient(180deg, rgba(237, 244, 238, 0.94), rgba(255, 253, 248, 0.9)),
-			rgba(255, 253, 248, 0.9);
+			linear-gradient(180deg, rgba(225, 204, 190, 0.95), rgba(236, 220, 209, 0.92)),
+			rgba(225, 204, 190, 0.92);
 		border-bottom: 1px solid rgba(34, 48, 43, 0.18);
 		box-shadow: 0 8px 22px rgba(34, 48, 43, 0.045);
 		backdrop-filter: blur(18px);
@@ -316,16 +316,17 @@ const featuredRecommendation = {
 		pointer-events: none;
 	}
 	.language-switcher[data-language="en"]::before {
-		background-color: #0a3a8a;
+		background-color: #012169;
 		background-image:
-			linear-gradient(90deg, transparent 0 43%, #ffffff 43% 57%, transparent 57% 100%),
-			linear-gradient(transparent 0 43%, #ffffff 43% 57%, transparent 57% 100%),
+			linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 62%),
+			linear-gradient(90deg, transparent 0 42%, #ffffff 42% 58%, transparent 58% 100%),
+			linear-gradient(transparent 0 42%, #ffffff 42% 58%, transparent 58% 100%),
 			linear-gradient(90deg, transparent 0 46%, #c8102e 46% 54%, transparent 54% 100%),
 			linear-gradient(transparent 0 46%, #c8102e 46% 54%, transparent 54% 100%),
-			linear-gradient(33deg, transparent 0 41%, #ffffff 41% 48%, transparent 48% 52%, #ffffff 52% 59%, transparent 59% 100%),
-			linear-gradient(-33deg, transparent 0 41%, #ffffff 41% 48%, transparent 48% 52%, #ffffff 52% 59%, transparent 59% 100%),
-			linear-gradient(33deg, transparent 0 45%, #c8102e 45% 47.5%, transparent 47.5% 52.5%, #c8102e 52.5% 55%, transparent 55% 100%),
-			linear-gradient(-33deg, transparent 0 45%, #c8102e 45% 47.5%, transparent 47.5% 52.5%, #c8102e 52.5% 55%, transparent 55% 100%);
+			linear-gradient(33deg, transparent 0 40%, #ffffff 40% 48%, transparent 48% 52%, #ffffff 52% 60%, transparent 60% 100%),
+			linear-gradient(-33deg, transparent 0 40%, #ffffff 40% 48%, transparent 48% 52%, #ffffff 52% 60%, transparent 60% 100%),
+			linear-gradient(33deg, transparent 0 44%, #c8102e 44% 47%, transparent 47% 53%, #c8102e 53% 56%, transparent 56% 100%),
+			linear-gradient(-33deg, transparent 0 44%, #c8102e 44% 47%, transparent 47% 53%, #c8102e 53% 56%, transparent 56% 100%);
 	}
 	.language-switcher::after {
 		position: absolute;
@@ -535,6 +536,7 @@ const featuredRecommendation = {
 		font-family: Georgia, "Times New Roman", serif;
 		font-size: clamp(1.4rem, 3vw, 2.3rem);
 		line-height: 1.3;
+		font-style: italic;
 	}
 
 	.featured-quote cite {
