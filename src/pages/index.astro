@@ -36,6 +36,7 @@ const featuredRecommendation = {
 			<div class="header-tools">
 				<nav class="main-nav" aria-label="Primær navigation">
 					<a href="#familier">Familier</a>
+					<a href="#priser">Priser</a>
 					<a href="/anbefalinger">Anbefalinger</a>
 					<a href="#om">Om mig</a>
 					<a href="#institutioner">Institutioner</a>
@@ -101,6 +102,37 @@ const featuredRecommendation = {
 						Jeg tilbyder vejledning på både dansk og engelsk og arbejder med både danske og internationale
 						familier.
 					</p>
+				</div>
+			</section>
+
+			<section class="section pricing-section" id="priser" aria-labelledby="priser-title">
+				<div class="section-heading">
+					<p class="eyebrow">Priser</p>
+					<h2 id="priser-title">Priser og praktisk information</h2>
+				</div>
+				<div class="pricing-layout">
+					<div class="pricing-card" aria-label="Priser for familier">
+						<ul class="pricing-list">
+							<li><span>Første session (90 min.)</span><strong>1.500 kr.</strong></li>
+							<li><span>60 min. session</span><strong>1.000 kr.</strong></li>
+							<li><span>90 min. session</span><strong>1.500 kr.</strong></li>
+							<li><span>5 x 60 minutters sessioner</span><strong>4.500 kr.</strong></li>
+							<li><span>5 x 90 minutters sessioner</span><strong>6.500 kr.</strong></li>
+						</ul>
+						<p class="pricing-footnote">(alle priser inkl. moms)</p>
+					</div>
+					<div class="pricing-notes">
+						<p>
+							Prisen for forløb i institutioner fastsættes ud fra aftale.
+						</p>
+						<p>
+							Afbud skal meldes senest 24 timer før den aftalte tid, da jeg dermed har mulighed for at
+							tilbyde tiden til en anden. Ved senere afbud opkræves fuldt honorar.
+						</p>
+						<p>
+							Hvis afbud kan undgås ved at lave en online session, så er dette altid en mulighed.
+						</p>
+					</div>
 				</div>
 			</section>
 
@@ -636,6 +668,12 @@ const featuredRecommendation = {
 		padding-block: clamp(70px, 10vw, 132px);
 	}
 
+	.pricing-section {
+		background:
+			linear-gradient(180deg, rgba(255, 253, 248, 0.82), rgba(255, 253, 248, 0.96)),
+			var(--paper);
+	}
+
 	.prose-section {
 		display: grid;
 		grid-template-columns: minmax(0, 52rem);
@@ -654,6 +692,74 @@ const featuredRecommendation = {
 	}
 
 	.prose-flow p + p {
+		margin-top: 18px;
+	}
+
+	.pricing-layout {
+		display: grid;
+		grid-template-columns: minmax(0, 30rem) minmax(0, 34rem);
+		justify-content: center;
+		gap: 28px;
+		align-items: start;
+	}
+
+	.pricing-card {
+		padding: 24px;
+		background: rgba(255, 253, 248, 0.88);
+		border: 1px solid rgba(34, 48, 43, 0.1);
+		border-radius: 8px;
+		box-shadow: var(--shadow-soft);
+	}
+
+	.pricing-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.pricing-list li {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: 16px;
+		padding: 14px 0;
+		border-bottom: 1px solid rgba(34, 48, 43, 0.1);
+	}
+
+	.pricing-list li:first-child {
+		padding-top: 0;
+	}
+
+	.pricing-list li:last-child {
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+
+	.pricing-list span {
+		color: var(--ink);
+		font-weight: 600;
+	}
+
+	.pricing-list strong {
+		color: var(--sage-dark);
+		font-size: 1rem;
+		white-space: nowrap;
+	}
+
+	.pricing-footnote {
+		margin: 18px 0 0;
+		color: var(--muted);
+		font-size: 0.96rem;
+	}
+
+	.pricing-notes {
+		max-width: 34rem;
+	}
+
+	.pricing-notes p {
+		max-width: 100%;
+	}
+
+	.pricing-notes p + p {
 		margin-top: 18px;
 	}
 
@@ -812,7 +918,8 @@ const featuredRecommendation = {
 		.hero,
 		.institution-section,
 		.prose-section,
-		.contact-section {
+		.contact-section,
+		.pricing-layout {
 			grid-template-columns: 1fr;
 		}
 
